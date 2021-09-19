@@ -20,8 +20,9 @@ namespace Entidades
         }
 
         public Operando(string strNumero)
-            : this(double.Parse(strNumero))
-        { }
+        {
+            this.Numero = strNumero;
+        }
 
         private double ValidarOperando(string strNumero)
         {
@@ -41,7 +42,7 @@ namespace Entidades
         {
             set
             {
-                this.numero = ValidarOperando(this.numero.ToString());
+                this.numero = ValidarOperando(Convert.ToString(value));
             }
         }
 
@@ -49,7 +50,7 @@ namespace Entidades
         {
             bool retorno = false;
             int cantidadCaracteres = binario.Length;
-
+            
             foreach (char caracter in binario)
             {
                 if (caracter != '1' && caracter != '0')
@@ -88,18 +89,19 @@ namespace Entidades
 
         public string DecimalBinario(double numero)
         {
-            string valorBinario = string.Empty; //variable que vamos a retornar
+            string valorBinario = string.Empty;
             int resultDiv = (int)numero;
             int restoDiv;
-            //Generamos dos variables una para verificar si el resultado de la division es igual a 0 y otra para verificar el resto
 
-            if(Math.Abs(resultDiv) > 0)
+            resultDiv = Math.Abs(resultDiv);
+
+            if (resultDiv > 0)
             {
                 do
                 {
                     restoDiv = resultDiv % 2;
                     resultDiv /= 2;
-                    valorBinario = restoDiv.ToString() + valorBinario; // lo hago de esta manera para ir dejando la ultima division en la primer posicion
+                    valorBinario = restoDiv.ToString() + valorBinario; 
                 } while (resultDiv > 0);
             }
             else
@@ -112,11 +114,9 @@ namespace Entidades
 
         public string DecimalBinario(string numero)
         {
-            string valorBinario = string.Empty; //variable que vamos a retornar
-            //int resultDiv = (int)numero;
+            string valorBinario = string.Empty; 
             int resultDiv;
             int restoDiv;
-            //Generamos dos variables una para verificar si el resultado de la division es igual a 0 y otra para verificar el resto
 
             if (int.TryParse(numero, out resultDiv))
             {
@@ -126,7 +126,7 @@ namespace Entidades
                     {
                         restoDiv = resultDiv % 2;
                         resultDiv /= 2;
-                        valorBinario = restoDiv.ToString() + valorBinario; // lo hago de esta manera para ir dejando la ultima division en la primer posicion
+                        valorBinario = restoDiv.ToString() + valorBinario;
                     } while (resultDiv > 0);
                 }
                 else
@@ -138,29 +138,17 @@ namespace Entidades
             return valorBinario;
         }
 
-        /*public string BinarioDecimal(string binario)
-        {
-            int numero;
-
-            if(int.TryParse(binario, out numero))
-            {
-                Math.Abs(numero);
-            }
-
-            return "";
-        }*/
-
         public static double operator - (Operando n1, Operando n2)
         {
-            return n1 - n2;
+            return n1.numero - n2.numero;
         }
         public static double operator +(Operando n1, Operando n2)
         {
-            return n1 + n2;
+            return n1.numero + n2.numero;
         }
         public static double operator *(Operando n1, Operando n2)
         {
-            return n1 * n2;
+            return n1.numero * n2.numero;
         }
         public static double operator /(Operando n1, Operando n2)
         {

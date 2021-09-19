@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public static class Claculadora
+    public static class Calculadora
     {
         public static double Operar(Operando num1, Operando num2, char operador)
         {
             double res = 0;
 
-            switch (Claculadora.ValidarOperador(operador))
+            switch (Calculadora.ValidarOperador(operador))
             {
                 case '+':
                     res = num1 + num2;
@@ -44,7 +44,7 @@ namespace Entidades
                     retorno = '-';
                     break;
                 case '*':
-                    retorno = '-';
+                    retorno = '*';
                     break;
                 case '/':
                     retorno = '/';

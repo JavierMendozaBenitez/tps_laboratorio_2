@@ -21,3 +21,4 @@ C:\Users\Javier\Documents\Técnico Universitario en Programación\Segundo Cuatri
 C:\Users\Javier\Documents\Técnico Universitario en Programación\Segundo Cuatrimestre\Laboratorio ll\tps_laboratorio_2\TP1\Entidades\obj\Debug\net5.0\Entidades.dll
 C:\Users\Javier\Documents\Técnico Universitario en Programación\Segundo Cuatrimestre\Laboratorio ll\tps_laboratorio_2\TP1\Entidades\obj\Debug\net5.0\ref\Entidades.dll
 C:\Users\Javier\Documents\Técnico Universitario en Programación\Segundo Cuatrimestre\Laboratorio ll\tps_laboratorio_2\TP1\Entidades\obj\Debug\net5.0\Entidades.pdb
+C:\Users\Javier\Documents\Técnico Universitario en Programación\Segundo Cuatrimestre\Laboratorio ll\tps_laboratorio_2\TP1\Entidades\obj\Debug\net5.0\Entidades.csproj.AssemblyReference.cache

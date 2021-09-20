@@ -144,6 +144,7 @@ namespace MiCalculadora
             this.lstOperaciones.Name = "lstOperaciones";
             this.lstOperaciones.Size = new System.Drawing.Size(175, 289);
             this.lstOperaciones.TabIndex = 4;
+            this.lstOperaciones.TabStop = false;
             // 
             // FormCalculadora
             // 

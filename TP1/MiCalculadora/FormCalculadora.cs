@@ -13,11 +13,19 @@ namespace MiCalculadora
 {
     public partial class FormCalculadora : Form
     {
+        /// <summary>
+        /// Inicializa el form.
+        /// </summary>
         public FormCalculadora()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Carga el form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormCalculadora_Load(object sender, EventArgs e)
         {
             cmbOperador.Items.Add("");
@@ -30,6 +38,9 @@ namespace MiCalculadora
            
         }
 
+        /// <summary>
+        /// Método que limpia los textBox, selecciona el indice 0 del comboBox y deja en blanco el Label.
+        /// </summary>
         public void Limpiar()
         {
             txtNumero1.Clear();
@@ -38,11 +49,23 @@ namespace MiCalculadora
             lblResultado.Text = "";
         }
 
+        /// <summary>
+        /// Evento del botón limpiar que llama al método Limpiar.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
 
+        /// <summary>
+        /// Método estático que recibe dos números, el operador y luego llama al método Operar.
+        /// /// </summary>
+        /// <param name="numero1"></param>
+        /// <param name="numero2"></param>
+        /// <param name="operador"></param>
+        /// <returns></returns>
         public static double Operar(String numero1, String numero2, string operador)
         {
             char c;
@@ -59,8 +82,16 @@ namespace MiCalculadora
             return resultado;
         }
 
+        /// <summary>
+        /// Lista donde se guardan las operaciones Hechas.
+        /// </summary>
         List<string> listaOperaciones = new List<string>();
 
+        /// <summary>
+        /// Evento del botón Operar que realiza la operación solicitada mostrandolo por el listBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOperar_Click(object sender, EventArgs e)
         {
 
@@ -81,11 +112,15 @@ namespace MiCalculadora
             listaOperaciones.Add(operacionHecha);
             lstOperaciones.DataSource = null;
             lstOperaciones.DataSource = listaOperaciones;
-
+            
             lblResultado.Text = resultado;
-
         }
       
+        /// <summary>
+        /// Evento del botón Convertir a Binario que toma el último resultado de una operación y lo convierte a Binario.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConvertirABinario_Click(object sender, EventArgs e)
         {
             string resultado;
@@ -106,9 +141,15 @@ namespace MiCalculadora
 
         }
 
+        /// <summary>
+        /// Evento de botón Convertir a Decimal que toma el ultimo resultado y si es binario lo convierte a decimal.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
             Operando opDec1 = new Operando();
+
 
             string resultadoDecimal;
             string ultimo = listaOperaciones.Last();
@@ -124,11 +165,22 @@ namespace MiCalculadora
             lblResultado.Text = resultadoDecimal;
 
         }
+
+        /// <summary>
+        /// Evento del botón Cerrar que cierra la calculadora.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Evento que al estar cerrandose el form muestra un cartel preguntando se está seguro.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormCalculadora_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(MessageBox.Show("¿Está seguro de querer salir?", "Salir", MessageBoxButtons.YesNo) == DialogResult.No)

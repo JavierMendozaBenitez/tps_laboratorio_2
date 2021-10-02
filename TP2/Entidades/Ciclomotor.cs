@@ -8,6 +8,12 @@ namespace Entidades
 {
     public class Ciclomotor : Vehiculo
     {
+        /// <summary>
+        /// Constructor publico
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
         public Ciclomotor(EMarca marca, string chasis, ConsoleColor color)
             : base (chasis, marca, color)
         {
@@ -23,7 +29,10 @@ namespace Entidades
                 return ETamanio.Chico;
             }
         }
-
+        /// <summary>
+        /// Metodo para mostrar información
+        /// </summary>
+        /// <returns></returns>
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();

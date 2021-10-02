@@ -16,10 +16,18 @@ namespace Entidades
         public enum ETipo {Ciclomotor, Sedan, SUV, Todos}
 
         #region "Constructores"
+
+        /// <summary>
+        /// Constructor privado
+        /// </summary>
         private Taller()
         {
             this.vehiculos = new List<Vehiculo>();
         }
+        /// <summary>
+        /// Constructor publico
+        /// </summary>
+        /// <param name="espacioDisponible"></param>
         public Taller(int espacioDisponible)
             : this ()
         {
@@ -56,23 +64,7 @@ namespace Entidades
             sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles", this.vehiculos.Count, this.espacioDisponible);
             sb.AppendLine("");
             foreach (Vehiculo v in t.vehiculos)
-            {
-                /*if(v is Ciclomotor && tipo is ETipo.Ciclomotor)
-                {
-                    sb.AppendLine(v.Mostrar());
-                }
-                else if (v is Sedan && tipo is ETipo.Sedan)
-                {
-                    sb.AppendLine(v.Mostrar());
-                }
-                else if (v is Suv && tipo is ETipo.SUV)
-                {
-                    sb.AppendLine(v.Mostrar());
-                }
-                else if (tipo is ETipo.Todos)
-                {
-                    sb.AppendLine(v.Mostrar());
-                }*/
+            {                
                 switch (tipo)
                 {
                     case ETipo.Ciclomotor:

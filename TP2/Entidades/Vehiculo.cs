@@ -17,7 +17,12 @@ namespace Entidades
         private string chasis;
         private ConsoleColor color;
 
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="chasis"></param>
+        /// <param name="marca"></param>
+        /// <param name="color"></param>
         public Vehiculo (string chasis, EMarca marca, ConsoleColor color)
         {
             this.chasis = chasis;
@@ -46,15 +51,14 @@ namespace Entidades
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Conversión explicita
+        /// </summary>
+        /// <param name="p"></param>
         public static explicit operator string(Vehiculo p)
         {
             StringBuilder sb = new StringBuilder();
-
-            /*sb.AppendLine("CHASIS: \r\n"+ p.chasis);
-            sb.AppendLine("MARCA : \r\n"+ p.marca.ToString());
-            sb.AppendLine("COLOR : \r\n"+ p.color.ToString());
-            sb.AppendLine("---------------------");*/
-
+            
             sb.AppendLine(p.Mostrar());
 
             return sb.ToString();

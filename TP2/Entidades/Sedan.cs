@@ -22,13 +22,20 @@ namespace Entidades
         public Sedan(EMarca marca, string chasis, ConsoleColor color)
             : base(chasis, marca, color)
         {
-            //this.tipo = ETipo.CuatroPuertas;
+            this.tipo = ETipo.CuatroPuertas;
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
+        /// <param name="tipo"></param>
         public Sedan(EMarca marca, string chasis, ConsoleColor color, ETipo tipo)
             : this (marca, chasis, color)
         {
-            this.tipo = ETipo.CuatroPuertas;       
+            this.tipo = tipo;       
         }
 
         /// <summary>
@@ -42,6 +49,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Metodo para mostrar
+        /// </summary>
+        /// <returns></returns>
         public override string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
